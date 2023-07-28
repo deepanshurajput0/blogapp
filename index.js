@@ -11,10 +11,9 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static("public/upload"))
 app.use("/",router)
-app.get('/', (req, res) => {
-  res.sendStatus(200)
-})
+
+connectDB()
 app.listen( PORT ,()=>{
   console.log(`Server is running on the ${PORT}`)
 })
-connectDB()
+
